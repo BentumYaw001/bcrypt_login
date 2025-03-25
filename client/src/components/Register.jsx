@@ -9,6 +9,7 @@ const Register = () => {
     phone: "",
   });
   const [message, setMessage] = useState("");
+  const API_BASE_URL = "https://bcrypt-login.onrender.com/api/auth";
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -19,10 +20,7 @@ const Register = () => {
     setMessage("");
 
     try {
-      const res = await axios.post(
-        "http://localhost:5000/api/auth/register",
-        formData
-      );
+      const res = await axios.post(`${API_BASE_URL}/register`, formData);
       setMessage(res.data.msg || "Registration successful!");
     } catch (error) {
       setMessage(error.response?.data?.msg || "Registration failed");

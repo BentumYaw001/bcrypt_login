@@ -56,14 +56,14 @@ const Register = () => {
           onChange={handleChange}
           required
         />
-        <input
+        {/* <input
           type="tel"
           name="phone"
           placeholder="Phone Number"
           value={formData.phone}
           onChange={handleChange}
           required
-        />
+        /> */}
         <button type="submit">Register</button>
       </form>
     </div>
